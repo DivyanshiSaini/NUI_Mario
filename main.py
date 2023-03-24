@@ -173,6 +173,7 @@ def start_game():
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 voice = Voice()
+
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
                     sys.exit()
