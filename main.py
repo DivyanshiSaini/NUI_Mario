@@ -6,29 +6,6 @@ import pyautogui
 import time
 
 
-class Voice:
-    text = "nothing"
-    #i = 0
-    #while i != 1:
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Speak : ")
-        r.adjust_for_ambient_noise(source, duration=2)
-        r.pause_threshold = 1
-        audio = r.listen(source)
-        try:
-            text = r.recognize_google(audio)
-        except:
-            print("could no recognize your voice")
-    print(text)
-    if text == "start":
-        pyautogui.press("spacebar")
-    if text == "jump":
-        pyautogui.keyDown("up")
-        time.sleep(2)
-        pyautogui.keyUp("down")
-    if text == "quit":
-        pyautogui.hotkey("esc")
 
 
 pygame.init()
@@ -59,7 +36,6 @@ class Topscore:
         if score > self.high_score:
             self.high_score = score
         return self.high_score
-
 topscore = Topscore()
 
 
@@ -172,7 +148,7 @@ def start_game():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                voice = Voice()
+                #voice = Voice()
 
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
@@ -234,7 +210,7 @@ def game_loop():
                 f.update()
 
             for event in pygame.event.get():
-                voice = Voice()
+                #voice = Voice()
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
@@ -242,13 +218,6 @@ def game_loop():
                     if event.key == pygame.K_UP:
                         mario.up = True
                         mario.down = False
-                    elif event.key == pygame.K_DOWN:
-                        mario.down = True
-                        mario.up = False
-                if event.type == pygame.KEYUP:
-                    if event.key == pygame.K_UP:
-                        mario.up = False
-                        mario.down = True
                     elif event.key == pygame.K_DOWN:
                         mario.down = True
                         mario.up = False
@@ -281,3 +250,4 @@ def game_loop():
 
 
 start_game()
+
