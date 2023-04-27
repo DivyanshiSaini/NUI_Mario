@@ -18,8 +18,20 @@ except sr.RequestError as e:
 
 # Map speech to keyboard commands
 if "jump" in speech:
-    pyautogui.press("space")
-elif "duck" in speech:
+    pyautogui.press("up")
+elif "down" in speech:
     pyautogui.keyDown("down")
+elif "up" in speech:
+    pyautogui.press("up")
+elif "left" in speech:
+    pyautogui.keyDown("left")
+elif "right" in speech:
+    pyautogui.keyDown("right")
+elif "select" in speech:
+    pyautogui.keyDown("enter")
+elif "enter" in speech:
+    pyautogui.keyDown("enter")
+elif "esc" in speech:
+    pyautogui.keyDown("esc")
 else:
     pyautogui.keyUp("down")
