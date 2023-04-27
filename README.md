@@ -1,24 +1,25 @@
 # NUI_Mario
 
-Running
+## Running
 
-$ pip install -r requirements.txt
-$ python main.py
+* $ pip install -r requirements.txt
+* $ python main.py
 
-Standalone windows build
+## Standalone windows build
 
-$ pip install py2exe
-$ python compile.py py2exe
+* $ pip install py2exe
+* $ python compile.py py2exe
 
-Controls
+## Controls
 
-Left: Move left // Left Arrow
-Right: Move right //Right Arror
-Space: Jump //Up Arror
-Shift: Boost
-Left/Right Mouseclick: Secret
+* Left: Move left  // Left Arrow
+* Right: Move right  //Right Arror
+* Space: Jump       //Up Arror
+* Shift: Boost   
+* Left/Right Mouseclick: Secret   
 
-Dependencies
+## Dependencies	
+* pygame	
+* scipy	
 
-pygame
-scipy
+
