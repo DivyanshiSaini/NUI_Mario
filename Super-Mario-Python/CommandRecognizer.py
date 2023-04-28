@@ -1,4 +1,4 @@
-import SpeechRecognition as sr
+import speech_recognition as sr
 import pyautogui
 import time
 
@@ -13,9 +13,9 @@ try:
     speech = r.recognize_google(audio)
     print("Speech:", speech)
 except sr.UnknownValueError:
-    print("Speech recognition could not understand audio")
+    print("Sorry, I couldn't understand what you said.")
 except sr.RequestError as e:
-    print("Could not request results from Google Speech Recognition service; {0}".format(e))
+    print("Sorry, could not request results from Google Speech Recognition service".format(e))
 
 # Map speech to keyboard commands
 if "jump" in speech:
@@ -39,4 +39,4 @@ elif "enter" in speech:
 elif "esc" in speech:
     pyautogui.press("esc")
 else:
-    pyautogui.keyUp("down")
+    print("Sorry, I didn't recognize that command.")
