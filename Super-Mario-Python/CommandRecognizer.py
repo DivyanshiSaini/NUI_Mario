@@ -26,11 +26,11 @@ elif "up" in speech:
     pyautogui.press("up")
 elif "left" in speech:
     pyautogui.keyDown("left")
-    time.sleep(2)
+    time.sleep(1)
     pyautogui.keyUp("left")
 elif "right" in speech:
     pyautogui.keyDown("right")
-    time.sleep(2)
+    time.sleep(1)
     pyautogui.keyUp("right")
 elif "select" in speech:
     pyautogui.press("enter")
