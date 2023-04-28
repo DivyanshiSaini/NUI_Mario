@@ -1,5 +1,6 @@
-import speech_recognition as sr
+import SpeechRecognition as sr
 import pyautogui
+import time
 
 r = sr.Recognizer()
 mic = sr.Microphone()
@@ -20,18 +21,22 @@ except sr.RequestError as e:
 if "jump" in speech:
     pyautogui.press("up")
 elif "down" in speech:
-    pyautogui.keyDown("down")
+    pyautogui.press("down")
 elif "up" in speech:
     pyautogui.press("up")
 elif "left" in speech:
     pyautogui.keyDown("left")
+    time.sleep(2)
+    pyautogui.keyUp("left")
 elif "right" in speech:
     pyautogui.keyDown("right")
+    time.sleep(2)
+    pyautogui.keyUp("right")
 elif "select" in speech:
-    pyautogui.keyDown("enter")
+    pyautogui.press("enter")
 elif "enter" in speech:
-    pyautogui.keyDown("enter")
+    pyautogui.press("enter")
 elif "esc" in speech:
-    pyautogui.keyDown("esc")
+    pyautogui.press("esc")
 else:
     pyautogui.keyUp("down")
